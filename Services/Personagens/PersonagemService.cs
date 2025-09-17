@@ -11,7 +11,7 @@ namespace AppRpgEtec.Services.Personagens
     public class PersonagemService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "dbjer.azurewebsites.net/Personagens";
+        private const string apiUrlBase = "https://dbjer.azurewebsites.net/Personagens";
 
         private string _token;
 
