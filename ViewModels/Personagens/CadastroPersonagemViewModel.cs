@@ -54,7 +54,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 id = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Id));
             }
         }
         public string Nome
@@ -63,7 +63,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 nome = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Nome));
             }
         }
 
@@ -73,7 +73,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 pontosVida = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(PontosVida));
             }
         }
 
@@ -83,7 +83,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 forca = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Forca));
             }
         }
 
@@ -93,7 +93,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 defesa = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Defesa));
             }
         }
 
@@ -103,7 +103,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 inteligencia = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Inteligencia));
             }
         }
 
@@ -113,7 +113,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 disputas = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Disputas));
             }
         }
 
@@ -123,7 +123,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 vitorias = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Vitorias));
             }
         }
 
@@ -133,7 +133,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             set
             {
                 derrotas = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Derrotas));
             }
         }
 
@@ -158,7 +158,7 @@ namespace AppRpgEtec.ViewModels.Personagens
             try
             {
                 ListaTiposClasse = new ObservableCollection<TipoClasse>();
-                ListaTiposClasse.Add(new TipoClasse() { Id = 1, Descricao = "Cavaeleiro" });
+                ListaTiposClasse.Add(new TipoClasse() { Id = 1, Descricao = "Cavaleiro" });
                 ListaTiposClasse.Add(new TipoClasse() { Id = 2, Descricao = "Mago" });
                 ListaTiposClasse.Add(new TipoClasse() { Id = 3, Descricao = "Clerigo" });
                 OnPropertyChanged(nameof(ListaTiposClasse));
@@ -245,9 +245,9 @@ namespace AppRpgEtec.ViewModels.Personagens
             }
         }
 
-        private string personagemSelecionadoId;
+        private string personagemSelecionadoId; //CTRL + R,E
 
-        public string PersonagemSelecionadoId //CTRL + R,E
+        public string PersonagemSelecionadoId 
         {
             set
             {
@@ -255,6 +255,21 @@ namespace AppRpgEtec.ViewModels.Personagens
                 { 
                     personagemSelecionadoId = Uri.UnescapeDataString(value);
                     CarregarPersonagem();
+                }
+            }
+        }
+
+        private Personagem personagemSelecionado;
+
+        public Personagem PersonagemSelecionado
+        {
+            get { return personagemSelecionado; }
+            set
+            {
+                if (value != null)
+                {
+                    personagemSelecionado = value;
+                    Shell.Current.GoToAsync($"cadPersonagem?pId={personagemSelecionado.Id}");
                 }
             }
         }

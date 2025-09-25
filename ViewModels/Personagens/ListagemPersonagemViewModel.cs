@@ -80,7 +80,7 @@ namespace AppRpgEtec.ViewModels.Personagens
 
         private Personagem personagemSelecionado;
 
-        public Personagem PersonagemSeleiconado
+        public Personagem PersonagemSelecionado
         {
             get { return personagemSelecionado; }
             set
