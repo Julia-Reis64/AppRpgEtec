@@ -12,7 +12,7 @@
 
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="Secondary">#DFD8F7</Color>
-    <Color x::Key="Tertiary">#2B0B98</Color>
+    <Color x:Key="Tertiary">#2B0B98</Color>
     
     
     
@@ -25,12 +25,12 @@
     
     
 
-    <Color x:Key="Primary">#512BD4</Color>
+   
     <Color x:Key="PrimaryDark">#ac99ea</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>
-    <Color x:Key="Secondary">#DFD8F7</Color>
+  
     <Color x:Key="SecondaryDarkText">#9880e5</Color>
-    <Color x:Key="Tertiary">#2B0B98</Color>
+   
 
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
@@ -60,5 +60,5 @@
     <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray500}"/>
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
-    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/> 
 </ResourceDictionary>
